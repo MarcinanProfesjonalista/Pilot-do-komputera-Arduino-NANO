@@ -1,3 +1,5 @@
+![alt text](https://github.com/MarcinanBarbarzynca/Pilot-do-komputera-Arduino-NANO/blob/main/Schematic_Pilot%20do%20wag_2021-02-23.png)
+
 # Pilot-do-komputera-Arduino-NANO
 
 Urządzenie to odpowiada za wysyłanie po serialu do komputera pojedynczych charów. Te czary są potem interpretowane przez skrypt, a następnie następuje reakcja. 
