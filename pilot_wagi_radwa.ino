@@ -34,7 +34,7 @@ void setup() {
 }
 
 void loop() {
-  if (digitalRead(cofnij_button) == LOW) {
+  if (digitalRead(cofnij_button) == HIGH) { //Tu jest odwróciona logika ze względu na to że został zastosowany CZERWONY przycisk NC. 
     if (i_p_active == false) {
       i_p_active = true;
       buttonTimer = millis();
