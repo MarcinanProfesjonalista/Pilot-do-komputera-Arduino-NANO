@@ -9,6 +9,7 @@ int cofnij_button = 4;
 bool i_p_active = false;
 long buttonTimer = 0;
 int longPressTimer = 4000;
+bool timerPassed = false; 
 
 void wyslij() {
   Serial.println("w");
@@ -34,15 +35,19 @@ void setup() {
 }
 
 void loop() {
-  if (digitalRead(cofnij_button) == HIGH) { //Tu jest odwróciona logika ze względu na to że został zastosowany CZERWONY przycisk NC. 
+  if (digitalRead(cofnij_button) == HIGH) {  //Tu jest odwróciona logika ze względu na to że został zastosowany CZERWONY przycisk NC. 
     if (i_p_active == false) {
       i_p_active = true;
       buttonTimer = millis();
     }//Zapamietuje stan nacisniecia przycisku
     if ((millis() - buttonTimer) > longPressTimer) {
-      cofnij();
+      if (timerPassed == false){
+        cofnij(); 
+        timerPassed = true;
+      }
     } else {}
   } else {
     i_p_active = false;
+    timerPassed = false;
   }
 }
